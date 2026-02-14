@@ -1,0 +1,9 @@
+Alice,3000
+Bob,2500
+Charlie,3500
+Diana,2000
+Eve,4000
+Frank,2800
+Alex Korp,3000
+Nikita Borisenko,2000
+Sitarama Raju,1000

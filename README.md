@@ -1,92 +1,114 @@
-# Python Homework Template
+# Python Core Homework 04
 
-A clean and well-configured Python project template for homework assignments. This template includes automatic code formatting, linting, and a virtual environment setup.
+Solutions for Python Core homework assignment, module 4. Includes file processing, data handling, and a CLI application.
 
-## Features
+## Quick Start
 
-- 🎨 **Black** code formatter (auto-format on save)
-- 🔍 **Pylint** for code quality checks
-- 📦 Virtual environment support
-- ⚙️ Pre-configured VS Code settings
-- 📝 Clean project structure
-
-## Initial Setup
-
-### 1. Create Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
-### 2. Activate Virtual Environment
+### 1. Activate Virtual Environment
 
 **Windows:**
+
 ```bash
 .venv/Scripts/activate
 ```
 
 **Mac/Linux:**
+
 ```bash
 source .venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+### 3. Run Tasks
 
-### Working on Assignments
+```bash
+# Task 1: Salary Analysis
+python task_1/task_1.py
 
-1. Open this project in VS Code
-2. Ensure your virtual environment is activated
-3. Create task files for your homework:
-   - `task_1.py`
-   - `task_2.py`
-   - `task_3.py`
-   - etc.
+# Task 2: Cat Information
+python task_2/task_2.py
 
-### Auto-Formatting
+# Task 3: Directory Structure Visualization
+python task_3/task_3.py <path_to_directory>
 
-Code formatting is configured to run automatically on save:
-- Uses **Black** formatter
-- Max line length: 88 characters
-- Tab size: 4 spaces
+# Task 4: CLI Contact Assistant Bot
+python task_4/main.py
+```
 
-Simply write your code and save the file - it will be formatted automatically!
+## Implemented Functions
 
-### Code Quality
+### Task 1: `total_salary(path)`
 
-Pylint is configured to check your code quality. VS Code will show warnings and suggestions as you code.
+Calculates total and average salary from a text file.
+
+- **Input:** Path to data file (format: "Name,Salary")
+- **Output:** Tuple (total_salary, average_salary)
+- **Features:** Uses Decimal for precise calculations, error handling
+
+### Task 2: `get_cats_info(path)`
+
+Reads cat information from a file and returns a list of dictionaries.
+
+- **Input:** Path to file (format: "id,name,age")
+- **Output:** List of dictionaries with keys "id", "name", "age"
+- **Features:** Data validation, handling of malformed records
+
+### Task 3: `print_directory_structure(path)`
+
+Displays a colored tree visualization of directory structure.
+
+- **Input:** Path to directory
+- **Output:** Tree of files and folders with color formatting
+- **Features:** Recursive traversal, sorting, color highlighting (colorama)
+
+### Task 4: CLI Contact Assistant Bot
+
+Interactive console application for managing contacts.
+
+**Available Commands:**
+
+- `hello` - greeting
+- `add <name> <phone>` - add contact
+- `change <name> <phone>` - change phone number
+- `phone <name>` - show phone number
+- `all` - show all contacts
+- `close` / `exit` - exit program
+
+**Module Structure:**
+
+- `input_parser.py` - user command parsing
+- `handlers.py` - command handlers (add, change, view contacts)
+- `main.py` - main entry point
 
 ## Project Structure
 
 ```
-simple-py-hw-template/
-├── .venv/              # Virtual environment (not tracked in git)
-├── .vscode/
-│   └── settings.json   # VS Code configuration
-├── .gitignore          # Git ignore rules
-├── .pylintrc           # Pylint configuration
-├── requirements.txt    # Python dependencies
-├── README.md           # This file
-└── task_*.py          # Your homework files
+goit-pycore-hw-04/
+├── task_1/
+│   ├── task_1.py           # Salary analysis
+│   └── salaries.txt        # Test data
+├── task_2/
+│   ├── task_2.py           # Cat information
+│   └── cats.txt            # Test data
+├── task_3/
+│   └── task_3.py           # Directory visualization
+├── task_4/
+│   ├── main.py             # CLI bot entry point
+│   ├── input_parser.py     # Command parser
+│   └── handlers.py         # Contact handlers
+├── requirements.txt        # Dependencies
+└── README.md              # Documentation
 ```
 
-## Notes
+## Technologies
 
-- The `.venv/` directory is included in `.gitignore` and will not be committed to git
-- Always activate your virtual environment before working on assignments
-- All dependencies are installed locally in the virtual environment
-
-## Tips
-
-- Run `pip list` to see installed packages
-- Run `black .` to manually format all Python files
-- Run `pylint task_1.py` to manually check a specific file
-
----
-
-Happy coding! 🚀
+- Python 3.12+
+- pathlib for path operations
+- Decimal for precise financial calculations
+- colorama for colored output
+- Type hints for type safety
